@@ -2,19 +2,29 @@
 
 ## Overview
 
-This project creates a Virtual Teaching Assistant (TA) API for the IIT Madras Tools in Data Science (TDS) course.
+This project builds a Virtual Teaching Assistant (TA) API for the IIT Madras Tools in Data Science (TDS) course.
 
-The API answers student questions automatically by using course content and forum posts from the TDS Discourse.
+The API automatically answers student questions based on:
+
+- Course content for TDS Jan 2025 as of April 15, 2025
+- TDS Discourse forum posts from Jan 1, 2025 to Apr 14, 2025
 
 ---
 
-## Step 1: Data Scraping (Discourse Posts)
+## Project Structure
 
-I wrote a Python script `scrape_discourse.py` that downloads posts from the TDS Discourse forum between January 1, 2025 and April 14, 2025.
+- `scrape_discourse.py`: Python script to scrape TDS forum posts from Discourse.
+- `tds_knowledge.db`: Database containing course and forum data.
+- `app.py`: Flask API server that processes student questions and returns answers.
+- `requirements.txt`: Python dependencies.
 
-This script collects useful forum discussions to help answer questions accurately.
+---
 
-To run the scraper:
+## How to Use
+
+### 1. Run the Scraper
+
+This script downloads forum posts and saves data locally.
 
 ```bash
 python scrape_discourse.py
